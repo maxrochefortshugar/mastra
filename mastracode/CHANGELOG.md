@@ -1,5 +1,24 @@
 # mastracode
 
+## 0.6.0-alpha.0
+
+### Minor Changes
+
+- Added /update slash command to check for and install updates directly from the TUI. Fixed update notifications logging repeatedly in the terminal — now only shown once per session. Update messages now reference /update instead of shell commands. ([#13787](https://github.com/mastra-ai/mastra/pull/13787))
+
+### Patch Changes
+
+- Fixed thinking level persistence as a global preference. `/think`, Settings, and OpenAI model pack updates now save the selected level to `settings.json`, so it is kept across restarts and new threads. ([#13748](https://github.com/mastra-ai/mastra/pull/13748))
+
+- Renamed `request_sandbox_access` tool to `request_access`. Fixed tilde paths (`~/.config/...`) not being expanded, which caused the tool to incorrectly report access as already granted. Fixed newly approved paths not being accessible until the next turn by calling `setAllowedPaths` immediately after approval. ([#13753](https://github.com/mastra-ai/mastra/pull/13753))
+
+- Fix fatal "MASTRACODE_VERSION is not defined" error when running from source with tsx. The version constant is now gracefully resolved from package.json at runtime when the build-time define is unavailable. ([#13767](https://github.com/mastra-ai/mastra/pull/13767))
+
+- Updated dependencies [[`41e48c1`](https://github.com/mastra-ai/mastra/commit/41e48c198eee846478e60c02ec432c19d322a517), [`82469d3`](https://github.com/mastra-ai/mastra/commit/82469d3135d5a49dd8dc8feec0ff398b4e0225a0), [`7ef6e2c`](https://github.com/mastra-ai/mastra/commit/7ef6e2c61be5a42e26f55d15b5902866fc76634f), [`08072ec`](https://github.com/mastra-ai/mastra/commit/08072ec54b5dfe810ed66c0d583ae9d1a9103c11), [`ef9d0f0`](https://github.com/mastra-ai/mastra/commit/ef9d0f0fa98ff225b17afe071f5b84a9258dc142), [`b12d2a5`](https://github.com/mastra-ai/mastra/commit/b12d2a59a48be0477cabae66eb6cf0fc94a7d40d), [`9e21667`](https://github.com/mastra-ai/mastra/commit/9e2166746df81da8f1f933a918741fc52f922c70), [`b12d2a5`](https://github.com/mastra-ai/mastra/commit/b12d2a59a48be0477cabae66eb6cf0fc94a7d40d), [`1391f22`](https://github.com/mastra-ai/mastra/commit/1391f227ff197080de185ac1073c1d1568c0631f), [`cafa045`](https://github.com/mastra-ai/mastra/commit/cafa0453c9de141ad50c09a13894622dffdd9978), [`1fd9ddb`](https://github.com/mastra-ai/mastra/commit/1fd9ddbb3fe83b281b12bd2e27e426ae86288266), [`1391f22`](https://github.com/mastra-ai/mastra/commit/1391f227ff197080de185ac1073c1d1568c0631f), [`ef888d2`](https://github.com/mastra-ai/mastra/commit/ef888d23c77f85f4c202228b63f8fd9b6d9361af), [`6135ef4`](https://github.com/mastra-ai/mastra/commit/6135ef4f5288652bf45f616ec590607e4c95f443), [`6135ef4`](https://github.com/mastra-ai/mastra/commit/6135ef4f5288652bf45f616ec590607e4c95f443)]:
+  - @mastra/core@1.10.0-alpha.0
+  - @mastra/memory@1.6.1-alpha.0
+  - @mastra/mcp@1.1.0-alpha.0
+
 ## 0.5.1
 
 ### Patch Changes
